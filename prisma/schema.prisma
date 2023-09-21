@@ -1,0 +1,39 @@
+// Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // uses connection pooling
+}
+
+model Escuela {
+  id      Int      @id @default(autoincrement())
+  nombre  String
+  alumnos Alumno[]
+}
+
+model Alumno {
+  id              Int       @id @default(autoincrement())
+  nombre          String
+  apellidoPaterno String
+  apellidoMaterno String
+  escuelaId       Int
+  escuela         Escuela   @relation(fields: [escuelaId], references: [id])
+  direccion       Direccion @relation(fields: [direccionId], references: [id])
+  direccionId     Int       @unique
+}
+
+model Direccion {
+  id           Int     @id @default(autoincrement())
+  calle        String
+  numero       String
+  colonia      String
+  ciudad       String
+  estado       String
+  codigoPostal String
+  alumno       Alumno?
+}
