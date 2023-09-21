@@ -3,6 +3,10 @@ import { getAlumnos } from "../../lib/alumno";
 import Card from "@/components/Card";
 import NewAlumnoForm from "@/app/components/NewAlumnoForm";
 
+/**
+ * Renders the home page with a list of students and a form to add new students.
+ * @returns The JSX element for the home page.
+ */
 export default async function Home() {
   const { alumnos } = await getAlumnos();
   return (

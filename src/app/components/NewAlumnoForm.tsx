@@ -5,6 +5,10 @@ import { createAlumnoAction, createDireccionAction } from "../_actions";
 
 
 
+/**
+ * Component for creating a new student form.
+ * @returns JSX.Element
+ */
 const NewAlumnoForm = () => {
 
     const formRef = useRef<HTMLFormElement>(null);

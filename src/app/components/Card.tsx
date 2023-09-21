@@ -1,11 +1,18 @@
 import { Alumno } from "@prisma/client";
 
+/**
+ * Props for the AlumnoItem component
+ */
 type AlumnoItemProps = {
     alumno: Alumno;
 }
 
-const Card = (props: any) => {
-    const alumno = props.alumno;
+/**
+ * Card component that displays information about a student
+ * @param alumno - The student object to display information for
+ * @returns A JSX element that displays the student information
+ */
+const Card = ({alumno} : any) => {
 
     const nombreCompleto = alumno.nombre + " " + alumno.apellidoPaterno + " " + alumno.apellidoMaterno;
     const direccionCompleta = alumno.direccion.calle + " " + alumno.direccion.numero + " " + alumno.direccion.colonia + " " + alumno.direccion.ciudad + " " + alumno.direccion.estado + " " + alumno.direccion.codigoPostal;
