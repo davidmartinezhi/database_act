@@ -6,13 +6,15 @@ import NewAlumnoForm from "@/app/components/NewAlumnoForm";
 export default async function Home() {
   const { alumnos } = await getAlumnos();
   return (
-    <section className="py-20">
-      <div className="container">
+    <section className="bg-gray-100 py-12">
+      <div className="container mx-auto px-4">
         <NewAlumnoForm />
 
-        <h1 className="mb-5 mt-10 w-fit border-b pb-2 pt-2 text-xl">Alumnos</h1>
+        <h1 className="text-2xl font-semibold mb-6 mt-10 border-b-2 border-gray-300 pb-2">
+          Alumnos
+        </h1>
 
-        <ul>
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {alumnos?.map((alumno) => (
             <Card alumno={alumno} />
           ))}

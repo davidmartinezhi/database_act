@@ -31,30 +31,31 @@ const NewAlumnoForm = () => {
     }
     
     return (
-        <form ref={formRef} action={action}>
-            <h2 className="mb-2 mt-5 font-medium">Información Alumno</h2>
-            <input type="text" name="nombre" placeholder="Nombre" id="" className="rounded border border-slate-400 px-2 py-0.5"/>
-            <input type="text" name="apellidoP"  placeholder="Apellido Paterno" id="" className="rounded border border-slate-400 px-2 py-0.5"/>
-            <input type="text" name="apellidoM" placeholder="Apellido Materno" id="" className="rounded border border-slate-400 px-2 py-0.5"/>
+        <form ref={formRef} action={action} className="bg-white p-8 rounded-lg shadow-md">
+            <h2 className="text-2xl font-semibold mb-4">Información Alumno</h2>
+            <div className="space-y-4">
+                <input type="text" name="nombre" placeholder="Nombre" className="w-full p-2 rounded border"/>
+                <input type="text" name="apellidoP" placeholder="Apellido Paterno" className="w-full p-2 rounded border"/>
+                <input type="text" name="apellidoM" placeholder="Apellido Materno" className="w-full p-2 rounded border"/>
+            </div>
 
-            <h2 className="mb-2 mt-5 font-medium">Dirección</h2>
-            <input type="text" name="calle"  placeholder="Calle" id="" className="rounded border border-slate-400 px-2 py-0.5"/>
-            <input type="text" name="numero" placeholder="Numero" id="" className="rounded border border-slate-400 px-2 py-0.5"/>
-            <input type="text" name="colonia"  placeholder="Colonia" id="" className="rounded border border-slate-400 px-2 py-0.5"/>
-            <input type="text" name="ciudad" placeholder="Ciudad" id="" className="rounded border border-slate-400 px-2 py-0.5"/>
-            <input type="text" name="estado" placeholder="Estado" id="" className="rounded border border-slate-400 px-2 py-0.5"/>
-            <input type="text" name="codigoP" placeholder="Código Postal" id="" className="rounded border border-slate-400 px-2 py-0.5"/>
+            <h2 className="text-2xl font-semibold my-4">Dirección</h2>
+            <div className="space-y-4">
+                <input type="text" name="calle" placeholder="Calle" className="w-full p-2 rounded border"/>
+                <input type="text" name="numero" placeholder="Numero" className="w-full p-2 rounded border"/>
+                <input type="text" name="colonia" placeholder="Colonia" className="w-full p-2 rounded border"/>
+                <input type="text" name="ciudad" placeholder="Ciudad" className="w-full p-2 rounded border"/>
+                <input type="text" name="estado" placeholder="Estado" className="w-full p-2 rounded border"/>
+                <input type="text" name="codigoP" placeholder="Código Postal" className="w-full p-2 rounded border"/>
+            </div>
 
-            <h2 className="mb-2 mt-5 font-medium">Universidad</h2>
-            <select name="universidad" id="universidad" className="rounded border border-slate-400 px-2 py-0.5">
-                <option value="1">Escuela Tec de Monterrey</option>
+            <h2 className="text-2xl font-semibold my-4">Universidad</h2>
+            <select name="universidad" className="w-full p-2 rounded border">
+                <option value="1">Tec de Monterrey</option>
                 <option value="2">UANL</option>
             </select>
-            <br/>
-            <button
-                type="submit"
-                className="mt-5 bg-slate-700 px-2 py-1 text-sm text-white"
-            >
+
+            <button type="submit" className="mt-6 bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
                 Agregar Alumno
             </button>
         </form>
