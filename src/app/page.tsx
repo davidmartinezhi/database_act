@@ -20,7 +20,7 @@ export default async function Home() {
 
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {alumnos?.map((alumno) => (
-            <Card alumno={alumno} />
+            <Card alumno={alumno} />            
           ))}
         </ul>
       </div>
