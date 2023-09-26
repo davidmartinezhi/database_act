@@ -1,7 +1,7 @@
 describe('NewAlumnoForm', () => {
   beforeEach(() => {
     // Navegar a la página donde se encuentra el formulario
-    cy.visit('http://localhost:3000'); // Ajusta la URL según tu configuración
+    cy.visit('http://localhost:3000'); 
   });
 
   it('should fill and submit the form', () => {
@@ -23,8 +23,6 @@ describe('NewAlumnoForm', () => {
 
     // Hacer clic en el botón de enviar
     cy.get('button[type="submit"]').click();
-
-    // Aquí puedes agregar aserciones para verificar que el formulario se envió correctamente
-    // Por ejemplo, verificar que la página redirige a una URL específica o muestra un mensaje de éxito
+    
   });
 });
