@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getAlumnos } from "../../lib/alumno";
-import Card from "@/components/Card";
+import CardAlumno from "@/app/components/CardAlumno";
 import NewAlumnoForm from "@/app/components/NewAlumnoForm";
 
 /**
@@ -20,7 +20,7 @@ export default async function Home() {
 
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {alumnos?.map((alumno) => (
-            <Card alumno={alumno} />            
+            <CardAlumno alumno={alumno} />            
           ))}
         </ul>
       </div>
