@@ -23,8 +23,21 @@ export async function getAlumnos() {
 
 export async function createAlumno(nombre: string, apellidoPaterno: string, apellidoMaterno: string, escuelaId: number, direccionId: number) {
     try{
-        const alumno = await prisma.alumno.create({data: {nombre, apellidoPaterno, apellidoMaterno, escuelaId, direccionId}});
-        return alumno;
+    // Validate that the escuela exists
+    const escuelaExists = await prisma.escuela.findUnique({
+        where: { id: escuelaId },
+      });
+  
+      if (!escuelaExists) {
+        return { error: "Escuela does not exist" };
+      }
+  
+      // Create the alumno
+      const alumno = await prisma.alumno.create({
+        data: { nombre, apellidoPaterno, apellidoMaterno, escuelaId, direccionId },
+      });
+  
+      return alumno;
     }catch(error){
         return {error};
     }
